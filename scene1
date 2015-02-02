@@ -1,0 +1,63 @@
+# TEST FICHIER SCENE
+
+scene
+{
+	name(DEMO)
+	cam_pos(5 0 0)
+	cam_rot(2 1 0)
+	render(640 480)
+}
+
+content
+{
+	object(cone)
+	{
+		color(220 230 240)
+		pos(5 2 -3)
+	}
+	object(cylinder)
+	{
+		size(100)
+		color(10 140 20)
+		pos(-2 0 -2)
+	}
+	object(plane)
+	{
+		color(190 190 190)
+		rot(0 1 0)
+		pos(0 -1 0)
+	}
+	object(plane)
+	{
+		color(190 190 190)
+		rot(0 0 90)
+		pos(0 0 -30)
+	}
+	object(sphere)
+	{
+		size(100)
+		color(10 120 180)
+		pos(-1 0 0)
+	}
+	object(sphere)
+	{
+		size(50)
+		color(200 20 10)
+		pos(0 0 0)
+	}
+	object(light)
+	{
+		color(128 128 256)
+		pos(15 7 0)
+	}
+	object(light)
+	{
+		color(128 256 128)
+		pos(15 5 15)
+	}
+	object(light)
+	{
+		color(256 128 128)
+		pos(0 3 15)
+	}
+}
