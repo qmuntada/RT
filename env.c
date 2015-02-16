@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 19:31:01 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/02 19:36:51 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/16 17:57:10 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ void	init_env_preparsing(t_env *e)
 	e->screen_name = "RTv1@42";
 	e->screen_width = 1000;
 	e->screen_height = 1000;
-	e->ref = 1.0;
 	e->iter = 0;
 }

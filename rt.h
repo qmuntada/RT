@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 16:51:43 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/06 18:20:16 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/16 19:02:15 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ typedef struct			s_env
 	char				*screen_name;
 	double				ln;
 	double				tmin;
-	double				ref;
 	int					iter;
 }						t_env;
 

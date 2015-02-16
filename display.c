@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 19:30:55 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/16 16:09:56 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/16 17:56:59 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ t_vec	object_color(t_env *e, t_vec *ro, t_vec *rd)
 			col2 = vecopx(&col2, 1.0 - objs->ref);
 			col = vecadd(&col, &col2);
 			col = vecopdiv(&col, 2.0);
-			e->ref += (1 - objs->ref);
 		}
 	}
 	return (col);
@@ -80,7 +79,6 @@ t_vec	ray_tracing(t_env *e, double x, double y)
 
 	set_cam(e, x, y);
 	e->iter = 0;
-	e->ref = 1.0;
 	col = object_color(e, &e->ro, &e->rd);
 	return (col);
 }
@@ -98,6 +96,7 @@ void	display(t_env *e)
 		while (++x < e->screen_width)
 		{
 			e->col = ray_tracing(e, x, y);
+			//ANTI ALIAS
 			col2 = ray_tracing(e, x + 0.5, y);
 			e->col = vecadd(&e->col, &col2);
 			col2 = ray_tracing(e, x, y + 0.5);
@@ -105,10 +104,12 @@ void	display(t_env *e)
 			col2 = ray_tracing(e, x + 0.5, y + 0.5);
 			e->col = vecadd(&e->col, &col2);
 			e->col = vecopdiv(&e->col, 4.0);
+			// CORRECTION GAMMA
 			e->col.x = pow(e->col.x, GAMMA);
 			e->col.y = pow(e->col.y, GAMMA);
 			e->col.z = pow(e->col.z, GAMMA);
 			vecclamp(&e->col, 0.0, 1.0);
+			// VIGNETTE
 			double x1 = (double)x / e->screen_width;
 			double y1 = (double)y / e->screen_height;
 			e->col = vecopx(&e->col, 0.2 + 0.8 * pow(16.0 * x1 * y1 * (1.0 - x1) * (1.0 - y1), 0.33));
