@@ -18,13 +18,12 @@ content
 		color(64 128 256)
 		size(500)
 		pos(0 0 15)
-		reflect(100)
 	}
 	object(sphere)
 	{
 		color(192 192 192)
 		size(50)
 		pos(5 0 10)
-		reflect(100)
+		reflect(99)
 	}
 }

@@ -11,46 +11,46 @@ content
 	object(light)
 	{
 		pos(20 10 1)
-		power(50);
+		power(60);
 	}
 	object(light)
 	{
 		pos(2 1 -5)
-		power(80);
+		power(90);
 	}
 	object(cone)
 	{
 		pos(5 2 -3)
-		reflect(10)
+		reflect(20)
 	}
 	object(cylinder)
 	{
 		size(100)
 		pos(-2 0 -2)
-		reflect(10)
+		reflect(20)
 	}
 	object(plane)
 	{
 		rot(0 1 0)
 		pos(0 -1 0)
-		reflect(10)
+		reflect(20)
 	}
 	object(plane)
 	{
 		rot(0 0 90)
 		pos(0 0 -30)
-		reflect(10)
+		reflect(20)
 	}
 	object(sphere)
 	{
 		size(100)
 		pos(-1 0 0)
-		reflect(10)
+		reflect(20)
 	}
 	object(sphere)
 	{
 		size(50)
 		pos(0 0 0)
-		reflect(10)
+		reflect(20)
 	}
 }

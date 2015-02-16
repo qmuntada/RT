@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 19:30:55 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/06 18:47:10 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/16 16:09:56 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,9 @@ void	display(t_env *e)
 			e->col.y = pow(e->col.y, GAMMA);
 			e->col.z = pow(e->col.z, GAMMA);
 			vecclamp(&e->col, 0.0, 1.0);
+			double x1 = (double)x / e->screen_width;
+			double y1 = (double)y / e->screen_height;
+			e->col = vecopx(&e->col, 0.2 + 0.8 * pow(16.0 * x1 * y1 * (1.0 - x1) * (1.0 - y1), 0.33));
 			pixel_put(e, x, y);
 		}
 	}
