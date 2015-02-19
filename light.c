@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/05 17:16:15 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/06 19:48:38 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/19 17:53:08 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ t_vec	setnor(t_obj *obj, t_vec *pos)
 	else if (obj->type == 2)
 		nor = (t_vec){pos->x - obj->pos.x, 0.0, pos->z - obj->pos.z};
 	else if (obj->type == 3)
+	{
 		nor = (t_vec){pos->x - obj->pos.x, -0.01 * (pos->y - obj->pos.y), \
 			pos->z - obj->pos.z};
+	}
 	vecnorm(&nor);
 	return (nor);
 }

@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 16:51:43 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/16 19:02:15 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/19 19:06:54 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define D 100
 # define FOV 2.0
 # define GAMMA 1.0
-# define REF_MAX 8
+# define REF_MAX 6
 
 typedef struct			s_vec
 {

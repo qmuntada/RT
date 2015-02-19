@@ -1,8 +1,8 @@
 scene
 {
 	name(SCENE3)
-	cam_pos(8 1 8)
-	cam_dir(3 0 2)
+	cam_pos(0 1 10)
+	cam_dir(3 1 2)
 	render(1600 900)
 }
 
@@ -10,13 +10,13 @@ content
 {
 	object(light)
 	{
-		pos(20 10 1)
-		power(50);
+		pos(15 10 10)
+		power(90);
 	}
 	object(light)
 	{
 		pos(2 1 -5)
-		power(95);
+		power(90);
 	}
 	object(cone)
 	{
@@ -25,7 +25,6 @@ content
 	}
 	object(cylinder)
 	{
-		size(100)
 		pos(-2 0 -2)
 		reflect(25)
 	}
@@ -43,14 +42,8 @@ content
 	}
 	object(sphere)
 	{
-		size(100)
-		pos(-1 0 0)
-		reflect(25)
-	}
-	object(sphere)
-	{
-		size(50)
-		pos(0 0 0)
+		size(300)
+		pos(8 2 0)
 		reflect(25)
 	}
 }

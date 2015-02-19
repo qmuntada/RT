@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 19:30:55 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/16 17:56:59 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/02/19 17:59:32 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,12 @@ t_vec	object_color(t_env *e, t_vec *ro, t_vec *rd)
 			nor = setnor(objs, &pos);
 			get_lighting(e, &col, &pos, &nor);
 		}
-		if (objs->ref < 1.0 && e->iter < REF_MAX)
+		if (objs->ref < 0.99 && e->iter < REF_MAX)
 		{
 			e->iter += 1;
-			nrd = *rd;
+			nrd = vecreflect(rd, &nor);
 			vecnorm(&nrd);
-			nrd = vecreflect(&nrd, &nor);
-			vecnorm(&nrd);
-			nor = vecopx(&nor, 0.001);
+			nor = vecopx(&nor, 0.01);
 			pos = vecadd(&pos, &nor);
 			col = vecopx(&col, objs->ref);
 			col2 = object_color(e, &pos, &nrd);

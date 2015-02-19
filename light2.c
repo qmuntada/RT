@@ -32,6 +32,6 @@ double	phong(t_obj *obj, t_vec *nor, t_vec *rd, t_vec *pos)
 	vecnorm(&ref);
 	phong = ft_clamp(pow(ft_clamp(vecdot(&ref, &light), \
 					0.0, 1.0), 100.0), 0.0, 1.0);
-	phong *= pow(obj->power, 0.1);
+	phong *= obj->power;
 	return (phong);
 }
