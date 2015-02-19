@@ -1,6 +1,6 @@
 scene
 {
-	name(SCENE1)
+	name(SCENE2)
 	cam_pos(0 0 0)
 	cam_dir(5 0 10)
 	render(1600 900)

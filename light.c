@@ -23,7 +23,8 @@ t_vec	setnor(t_obj *obj, t_vec *pos)
 	else if (obj->type == 2)
 		nor = (t_vec){pos->x - obj->pos.x, 0.0, pos->z - obj->pos.z};
 	else if (obj->type == 3)
-		nor = (t_vec){pos->x - obj->pos.x, 0.0, pos->z - obj->pos.z};
+		nor = (t_vec){pos->x - obj->pos.x, -0.01 * (pos->y - obj->pos.y), \
+			pos->z - obj->pos.z};
 	vecnorm(&nor);
 	return (nor);
 }

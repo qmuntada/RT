@@ -67,7 +67,6 @@ t_vec	object_color(t_env *e, t_vec *ro, t_vec *rd)
 			col2 = object_color(e, &pos, &nrd);
 			col2 = vecopx(&col2, 1.0 - objs->ref);
 			col = vecadd(&col, &col2);
-			col = vecopdiv(&col, 2.0);
 		}
 	}
 	return (col);

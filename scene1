@@ -1,7 +1,7 @@
 scene
 {
 	name(SCENE1)
-	cam_pos(8 3 8)
+	cam_pos(-10 1 -10)
 	cam_dir(0 1 0)
 	render(1600 900)
 }
@@ -11,19 +11,19 @@ content
 	object(light)
 	{
 		color(256 256 256)
-		pos(20 10 1)
+		pos(-5 0 -15)
 		power(90);
 	}
 	object(cone)
 	{
-		color(256 256 64)
+		color(10 120 180)
 		pos(5 2 -3)
 		reflect(90)
 	}
 	object(cylinder)
 	{
 		size(100)
-		color(10 140 20)
+		color(64 256 32)
 		pos(-2 0 -2)
 		reflect(90)
 	}
@@ -32,26 +32,13 @@ content
 		color(256 256 256)
 		rot(0 1 0)
 		pos(0 -1 0)
-		reflect(90)
-	}
-	object(plane)
-	{
-		color(128 256 128)
-		rot(0 0 90)
-		pos(0 0 -30)
-		reflect(90)
+		reflect(25)
 	}
 	object(sphere)
 	{
 		size(200)
-		color(10 120 180)
-		pos(-5 0 2)
-		reflect(90)
-	}
-	object(sphere)
-	{
 		color(200 20 10)
-		pos(0 1 0)
+		pos(-5 0 2)
 		reflect(90)
 	}
 }
