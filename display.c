@@ -16,40 +16,40 @@ void	set_cam(t_env *e, double x, double y)
 {
 	double	u;
 	double	v;
-	t_vec	ww;
-	t_vec	uu;
-	t_vec	vv;
+	t_vec3	ww;
+	t_vec3	uu;
+	t_vec3	vv;
 
 	u = (e->screen_width - x * 2.0) / e->screen_height;
 	v = (e->screen_height - y * 2.0) / e->screen_height;
 	ww = vecsub(&e->cam_dir, &e->cam_pos);
 	vecnorm(&ww);
-	uu = veccross(&ww, &(t_vec){0.0, 1.0, 0.0});
+	uu = veccross(&ww, &(t_vec3){0.0, 1.0, 0.0});
 	vecnorm(&uu);
 	vv = veccross(&uu, &ww);
-	e->rd = (t_vec){u * uu.x + v * vv.x + FOV * ww.x, u * uu.y + v * \
+	e->rd = (t_vec3){u * uu.x + v * vv.x + FOV * ww.x, u * uu.y + v * \
 		vv.y + FOV * ww.y, u * uu.z + v * vv.z + FOV * ww.z};
 	e->ro = e->cam_pos;
 }
 
-t_vec	object_color(t_env *e, t_vec *ro, t_vec *rd)
+t_vec3	object_color(t_env *e, t_vec3 *ro, t_vec3 *rd)
 {
-	t_vec	pos;
-	t_vec	col2;
-	t_vec	nor;
-	t_vec	nrd;
-	t_vec	col;
+	t_vec3	pos;
+	t_vec3	col2;
+	t_vec3	nor;
+	t_vec3	nrd;
+	t_vec3	col;
 	t_obj	*objs;
 
 	e->tmin = 10000.0;
 	objs = inter_object(e, ro, rd, &e->tmin);
-	col = (t_vec){0.0, 0.0, 0.0};
+	col = (t_vec3){0.0, 0.0, 0.0};
 	if (e->tmin > 0.0001 && objs)
 	{
-		col = (t_vec){objs->color.x, objs->color.y, objs->color.z};
+		col = (t_vec3){objs->color.x, objs->color.y, objs->color.z};
 		if (e->tmin < 10000.0)
 		{
-			pos = (t_vec){ro->x + e->tmin * rd->x, ro->y + e->tmin * \
+			pos = (t_vec3){ro->x + e->tmin * rd->x, ro->y + e->tmin * \
 				rd->y, ro->z + e->tmin * rd->z};
 			nor = setnor(objs, &pos);
 			get_lighting(e, &col, &pos, &nor);
@@ -70,9 +70,9 @@ t_vec	object_color(t_env *e, t_vec *ro, t_vec *rd)
 	return (col);
 }
 
-t_vec	ray_tracing(t_env *e, double x, double y)
+t_vec3	ray_tracing(t_env *e, double x, double y)
 {
-	t_vec	col;
+	t_vec3	col;
 
 	set_cam(e, x, y);
 	e->iter = 0;
@@ -84,7 +84,7 @@ void	display(t_env *e)
 {
 	int		x;
 	int		y;
-	t_vec	col2;
+	t_vec3	col2;
 
 	y = -1;
 	while (++y < e->screen_height)
