@@ -6,16 +6,14 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 16:51:43 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/02/19 19:06:54 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/05/04 17:58:05 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_H
 # define RT_H
 
-# include <X11/X.h>
-# include <X11/Xlib.h>
-# include <mlx.h>
+# include "minilibx_macos/mlx.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -23,11 +21,11 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-# define ESC 65307
-# define S 115
-# define W 119
-# define A 97
-# define D 100
+# define ESC 53
+# define S 1
+# define W 13
+# define A 0
+# define D 2
 # define FOV 2.0
 # define GAMMA 1.0
 # define REF_MAX 6
